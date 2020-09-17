@@ -16,3 +16,4 @@ gunicorn==0.17.2
 #psycopg2==2.5.2
 pyscss
 sqlalchemy==0.9.3
+werkzeug==0.16.1
