@@ -23,6 +23,7 @@ def ListuserLog():
     pole = db.session.query(LogUser).all()
     return render_template("public/listuser.tmpl",data = pole)
 
+
 @blueprint.route('/secti', methods=['GET','POST'])
 def scitani():
     form = secti()
