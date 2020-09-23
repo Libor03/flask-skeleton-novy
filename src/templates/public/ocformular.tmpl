@@ -1,6 +1,6 @@
-{% from "macros/fields.tmpl" import render_input_field, render_submit %}
+{% from "macros/fields.tmpl" import render_input_choice, render_input_field,render_checkbox,render_checkbox_field, render_submit %}
 {% extends "shared/layout.tmpl" %}
-from
+
 {% block title %}Forgotten password{% endblock %}
 
 {% block content %}
@@ -8,8 +8,9 @@ from
   <div class="form-group">Type in the email address you used when signing up and we'll send you a link to reset your password.</div>
   <form method="POST" id='insert-form'>
     {{ form.hidden_tag() }}
-    {{ render_input_field(form.a) }}
-    {{ render_input_field(form.b) }}
+      {{ render_input_field(form.a) }}
+      {{ render_input_field(form.b) }}
+      {{ render_input_choice(form.obrazec) }}
     {{ render_submit() }}
   </form>
 {% endblock %}
