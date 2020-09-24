@@ -1,6 +1,8 @@
 """
 Logic for dashboard related routes
 """
+from math import sqrt
+
 from flask import Blueprint, render_template
 from .forms import LogUserForm, secti, masoform, ocform
 from ..data.database import db
@@ -41,6 +43,11 @@ def masof():
 def ocapp():
     form = ocform()
     if form.validate_on_submit():
-        return "OK"
+        if form.obrazec.data == "1":
+            return str(pow(form.a.data,2))
+        if form.obrazec.data == "2":
+            return str(form.a.data * form.b.data)
+        if form.obrazec.data == "3":
+            return str((form.a.data * form.b.data)/2)
     return render_template('public/ocformular.tmpl', form=form)
 
